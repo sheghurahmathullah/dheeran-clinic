@@ -26,6 +26,7 @@ import PreventiveCarePage from "./pages/PreventiveCarePage";
 import FootUlcerCarePage from "./pages/FootUlcer";
 import HomeTreatmentPage from "./pages/HomeTreatmentPage";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import HealthCheckupPopup from "./components/LandingPopup";
 
 interface AppProps {
   initialPage?: string;
@@ -79,6 +80,7 @@ function App({ initialPage = "home" }: AppProps) {
         <Approach />
         <ConsultationForm />
         <Testimonials />
+        <HealthCheckupPopup/>
       </>
     ),
     "about-page": () => <AboutPage />,
