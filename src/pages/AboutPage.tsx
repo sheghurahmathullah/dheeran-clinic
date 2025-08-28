@@ -1,5 +1,9 @@
 import {
-  GraduationCap,
+  Home,
+  Stethoscope,
+  Footprints,
+  Sun,
+  ShieldCheck,
   Award,
   Users,
   Heart,
@@ -47,38 +51,51 @@ const AboutPage = () => {
     },
   } as const;
 
-  const qualifications = [
-    {
-      icon: GraduationCap,
-      title: "General Medicine",
-      description:
-        "Comprehensive primary care with focus on preventive medicine and chronic disease management",
-    },
-    {
-      icon: Heart,
-      title: "Diabetes Management",
-      description:
-        "Specialized care for uncontrolled diabetes, including advanced monitoring and personalized treatment protocols",
-    },
-    {
-      icon: Users,
-      title: "Podiatry",
-      description:
-        "Expert treatment of diabetic foot ulcers, wound care, and comprehensive foot health management",
-    },
-    {
-      icon: Award,
-      title: "Skin Treatments",
-      description:
-        "Advanced dermatological care including skin whitening treatments and cosmetic procedures",
-    },
-  ];
+ const qualifications = [
+  {
+    icon: Stethoscope,
+    title: "General Healthcare",
+    description:
+      "Comprehensive primary care, preventive check-ups, and personalized health management",
+  },
+  {
+    icon: Footprints,
+    title: "Podiatry Services",
+    description:
+      "Specialized foot care including treatment of ulcers, infection control, and neuropathy management",
+  },
+  {
+    icon: Sun,
+    title: "Skin Care",
+    description:
+      "Advanced dermatology services for healthy skin, acne treatments, and chronic skin condition management",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Diabetes Management",
+    description:
+      "Complete diabetes care with monitoring, lifestyle guidance, and personalized treatment plans",
+  },
+  {
+    icon: Home,
+    title: "Home Treatment",
+    description:
+      "Convenient in-home healthcare including doctor visits, nursing support, and post-surgery care",
+  },
+  {
+    icon: Microscope,
+    title: "Lab and Diagnostics",
+    description:
+      "On-site laboratory services and diagnostic tests for faster, accurate, and reliable results",
+  },
+];
+
 
   const researchAreas = [
-    "Advanced methods in diabetes control and glucose monitoring",
-    "Innovative faster recovery methods for diabetic foot ulcers",
-    "Wound healing acceleration techniques",
-    "Preventive care strategies for diabetic complications",
+    "Better strategies in diabetes & glucose monitoring",
+    "Foot ulcer and wound recovery innovations",
+    "Neuropathy and amputation prevention protocols",
+    "Integrative preventive healthcare solutions",
   ];
 
   return (
@@ -95,11 +112,14 @@ const AboutPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl font-bold text-gray-800 mb-6">
-              About{" "}
-              <span className=" text-[#22578c]">Dr. Karthick Palanisamy</span>
+              Welcome to{" "}
+              <span className=" text-[#22578c]">Dheeran Health Clinic</span>
             </h1>
             <p className="text-xl text-gray-600">
-              General Physician, Diabetologist & Podiatrist
+              Diabetes & Foot Care Center – Labs and Diagnostics Enclosed
+            </p>
+            <p className="mt-3 text-lg font-semibold text-teal-700">
+              “Let’s Beat Diabetes Together”
             </p>
           </div>
         </div>
@@ -130,12 +150,11 @@ const AboutPage = () => {
                   <div className="relative">
                     <img
                       src="/hero.png"
-                      alt="Dr. Karthick Palanisamy"
+                      alt="Dheeran Health Clinic"
                       className="w-full h-auto object-cover rounded-2xl sm:rounded-3xl shadow-xl"
                     />
                   </div>
-
-                  {/* Update floating badges for mobile */}
+                  {/* Floating badges */}
                   <div
                     className={`absolute -top-4 sm:-top-6 -right-4 sm:-right-6 bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-xl border border-gray-100 transform transition-all duration-1000 ${
                       isVisible
@@ -173,7 +192,7 @@ const AboutPage = () => {
                         M.D., FIDM., FICM., PGDip. pod
                       </div>
                       <div className="text-blue-700 text-xs sm:text-sm font-medium leading-snug">
-                        Diabetologist&nbsp;|&nbsp;Podiatrist
+                        Diabetologist | Podiatrist
                       </div>
                       <div className="text-green-700 text-xs sm:text-sm font-medium leading-snug">
                         Geriatric Home Care Specialist
@@ -186,40 +205,41 @@ const AboutPage = () => {
 
             <div>
               <h2 className="text-4xl font-bold text-gray-800 mb-6">
-                A Compassionate Approach to{" "}
-                <span className="text-[#22578c]">Healthcare</span>
+                Comprehensive Care at{" "} <br />
+                <span className="text-[#22578c]">Dheeran Clinic</span>
               </h2>
+
               <div className="bg-teal-50 border-l-4 border-teal-600 p-6 rounded-r-xl mb-8">
                 <p className="text-lg text-gray-700 italic leading-relaxed">
-                  "With over a decade of experience, I've helped countless
-                  patients lead healthier lives by offering precise,
-                  compassionate care tailored to their unique needs."
+                  "Caring for diabetes, foot health, and general wellness with
+                  advanced treatments and compassionate care."
                 </p>
                 <div className="mt-4 flex items-center">
                   <div className="w-12 h-0.5 bg-teal-600"></div>
                   <p className="ml-4 text-teal-800 font-semibold">
-                    Dr. Karthick Palanisamy
+                    Dheeran Health Clinic
                   </p>
                 </div>
               </div>
 
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                As a dedicated healthcare professional, I believe that every
-                patient deserves personalized attention and care that addresses
-                not just their immediate concerns, but their long-term health
-                and well-being. My practice is built on the foundation of
-                combining cutting-edge medical science with genuine empathy and
-                understanding.
+                At Dheeran Clinic, our mission is to provide accessible,
+                evidence-based healthcare that treats not only the symptoms but
+                addresses root causes. We specialize in diabetes management and
+                preventing complications like foot ulcers, neuropathy, and
+                amputations.
               </p>
 
               <div className="flex items-center space-x-4 text-teal-600">
                 <div className="flex items-center space-x-2">
                   <Award className="h-5 w-5" />
-                  <span className="font-semibold">Board Certified</span>
+                  <span className="font-semibold">Specialized Clinic</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Users className="h-5 w-5" />
-                  <span className="font-semibold">1000+ Patients Treated</span>
+                  <span className="font-semibold">
+                    1000+ Patients Empowered
+                  </span>
                 </div>
               </div>
             </div>
@@ -240,14 +260,13 @@ const AboutPage = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-800 mb-4">
-                Professional <span className="text-[#22578c]">Background</span>
+                Our <span className="text-[#22578c]">Services</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Specialized expertise across multiple medical disciplines,
-                ensuring comprehensive care for all your health needs
+                Full spectrum care – from preventive health checks to advanced
+                diabetic foot care
               </p>
             </div>
-
             <div className="grid md:grid-cols-2 gap-8">
               {qualifications.map((qual, index) => {
                 const IconComponent = qual.icon;
@@ -290,15 +309,13 @@ const AboutPage = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-800 mb-4">
-                Core <span className="text-[#22578c]">Beliefs & Approach </span>
-                to Care
+                Our <span className="text-[#22578c]">Approach</span> to Care
               </h2>
               <p className="text-xl text-gray-600">
-                My philosophy centers on treating each patient as a whole
-                person, not just a condition
+                We combine compassionate doctor-patient relationships with
+                scientific excellence
               </p>
             </div>
-
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               <div className="text-center">
                 <div className="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -308,51 +325,52 @@ const AboutPage = () => {
                   Personalized Care
                 </h3>
                 <p className="text-gray-600">
-                  Every treatment plan is tailored to your unique health
-                  profile, lifestyle, and goals
+                  Every diabetic profile and treatment plan is uniquely designed
+                  for you
                 </p>
               </div>
-
               <div className="text-center">
                 <div className="bg-teal-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Microscope className="h-10 w-10 text-teal-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-4">
-                  Scientific Excellence
+                  Scientific Precision
                 </h3>
                 <p className="text-gray-600">
-                  Combining the latest medical research with proven treatment
-                  methodologies
+                  Diagnostics, lab tests, and standard treatments based on
+                  international guidelines
                 </p>
               </div>
-
               <div className="text-center">
                 <div className="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Users className="h-10 w-10 text-green-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-4">
-                  Preventive Focus
+                  Preventive First
                 </h3>
                 <p className="text-gray-600">
-                  Emphasizing long-term health solutions and preventive care
-                  strategies
+                  Focus on early detection, lifestyle guidance, and foot care
                 </p>
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-teal-50 to-blue-50 rounded-3xl p-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                  My Commitment to You
-                </h3>
-                <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto">
-                  I believe in building lasting relationships with my patients
-                  based on trust, open communication, and mutual respect. Your
-                  health journey is unique, and I'm here to guide you every step
-                  of the way with expertise, compassion, and unwavering support.
-                </p>
-              </div>
-            </div>
+          <div className="bg-gradient-to-r from-teal-50 to-blue-50 rounded-3xl p-8">
+  <div className="text-center">
+    <h3 className="text-2xl font-bold text-gray-800 mb-4">
+      Special Offer – Master Health Checkup
+    </h3>
+    <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto">
+      Includes Vitamin D3, Vitamin B12, ABI Test (Foot),
+      Biothesiometry Test (Foot), ECG, and FREE consultation with
+      our diabetologist or family physician.
+      <br />
+      <span className="text-gray-500 line-through mr-2">₹7000</span>
+      <span className="font-bold text-red-600">₹999 only</span>{" "}
+      <span className="text-gray-500">(Valid Aug 15 – Sep 15)</span>
+    </p>
+  </div>
+</div>
+
           </div>
         </div>
       </motion.section>
@@ -373,11 +391,10 @@ const AboutPage = () => {
                 Research & <span className="text-[#22578c]">Innovation</span>
               </h2>
               <p className="text-xl text-gray-600">
-                Continuously advancing medical knowledge to provide better
-                patient outcomes
+                Continuously improving methods to manage and prevent diabetic
+                complications
               </p>
             </div>
-
             <div className="bg-white rounded-3xl p-8 shadow-lg">
               <div className="flex items-start space-x-6 mb-8">
                 <div className="bg-purple-100 p-4 rounded-2xl flex-shrink-0">
@@ -385,16 +402,15 @@ const AboutPage = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                    Current Research Focus
+                    Our Research Focus
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-6">
-                    My ongoing research contributes to advancing treatment
-                    methodologies and improving patient care standards in
-                    diabetes management and wound healing.
+                    At Dheeran Clinic, we study better ways to manage diabetes,
+                    accelerate wound healing, and save limbs through early
+                    intervention.
                   </p>
                 </div>
               </div>
-
               <div className="grid md:grid-cols-2 gap-6">
                 {researchAreas.map((area, index) => (
                   <div key={index} className="flex items-start space-x-3">
@@ -409,7 +425,6 @@ const AboutPage = () => {
       </motion.section>
 
       {/* Call to Action */}
-
       <motion.section
         ref={ctaRef}
         initial="hidden"
@@ -421,14 +436,13 @@ const AboutPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-black">
             <h2 className="text-4xl font-bold mb-6">
-              Ready to Start Your{" "}
-              <span className="text-[#22578c]">Health Journey?</span>
+              Ready for Better{" "}
+              <span className="text-[#22578c]">Diabetes Care?</span>
             </h2>
-
             <p className="text-xl mb-8 leading-relaxed opacity-90">
-              Whether you're struggling with uncontrolled diabetes or seeking
-              advanced skin treatments, I'm here to help. Let's take the first
-              step toward better health together.
+              From diabetes management to preventive foot care and diagnostics,
+              we’re here to support your health journey. Book an appointment
+              today.
             </p>
 
             {/* Buttons */}
@@ -445,7 +459,7 @@ const AboutPage = () => {
 
               {/* Secondary Button */}
               <a
-                href="tel:+1234567890"
+                href="tel:+919942832152"
                 className="border-2 border-[#22578c] text-[#22578c] px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#22578c] hover:text-white transition-all duration-300 text-center"
               >
                 Call Now
@@ -456,11 +470,16 @@ const AboutPage = () => {
             <div className="mt-12 pt-8 border-t border-black/20">
               <div className="flex items-center justify-center space-x-4">
                 <div className="w-16 h-0.5 bg-black/30"></div>
-                <p className="text-lg font-semibold">Dr. Karthick Palanisamy</p>
+                <p className="text-lg font-semibold">
+                  Dheeran Health Clinic – Chennai
+                </p>
                 <div className="w-16 h-0.5 bg-black/30"></div>
               </div>
               <p className="text-black/70 mt-2">
-                Your Partner in Health & Wellness
+                No.394, MTH Road (Opp. to BSV Mahal, Near Old Bharat School,
+                Ambattur, Chennai-53)
+                <br />
+                Consultation with Appointment Only
               </p>
             </div>
           </div>

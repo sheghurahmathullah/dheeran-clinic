@@ -117,9 +117,8 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                     : "text-gray-700 hover:text-blue-600"
                 }`}
               >
-                About Dr. Karthick
+                About Clinic
               </button>
-
               {/* Services Dropdown (Desktop) */}
               <div className="relative" ref={servicesDropdownRef}>
                 <button
