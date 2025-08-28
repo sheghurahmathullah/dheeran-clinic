@@ -78,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
     },
     {
       name: "Lab and Diagnostics",
-      page: "general-services/lab-and-diagnostics",
+      page: "general-services/lab-diagnostics",
       icon: Microscope,
     },
   ];
