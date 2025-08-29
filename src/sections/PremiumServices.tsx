@@ -1,5 +1,23 @@
 import React, { useState } from "react";
-import { Stethoscope, Droplet, Shield, Microscope, Footprints, Home } from "lucide-react";
+import {
+  Stethoscope,
+  Droplet,
+  Shield,
+  Microscope,
+  Footprints,
+  Home,
+} from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
+// Map service IDs to desired routes
+const serviceRouteMap = {
+  "diabetes-management": "/general-services/diabetes-management",
+  "podiatry-services": "/general-services/podiatry",
+  "skin-care": "/general-services/skin-care",
+  "general-healthcare": "/general-services/general-healthcare",
+  "home-treatment": "/general-services/home-treatment",
+  "lab-diagnostics": "/general-services/lab-diagnostics",
+};
 
 const services = [
   {
@@ -84,7 +102,8 @@ const services = [
     id: "lab-diagnostics",
     icon: Microscope,
     title: "Lab & Diagnostics",
-    description: "Accurate lab tests and diagnostic services for better treatment decisions",
+    description:
+      "Accurate lab tests and diagnostic services for better treatment decisions",
     items: [
       "Blood and urine tests",
       "X-ray, ECG, and ultrasound",
@@ -100,10 +119,10 @@ const services = [
 const PremiumServices: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const navigate = useNavigate();
 
   const handleTabChange = (index: number) => {
     if (index === activeTab) return;
-
     setIsTransitioning(true);
     setTimeout(() => {
       setActiveTab(index);
@@ -139,10 +158,6 @@ const PremiumServices: React.FC = () => {
           <div className="lg:col-span-2">
             <div className="sticky top-8 pt-0 lg:pt-4">
               <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
-                {/* <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center">
-                  <div className="w-2 h-8 bg-gradient-to-b from-[#22578c] to-blue-400 rounded-full mr-3"></div>
-                  Choose Your Service
-                </h3> */}
                 <div className="space-y-3">
                   {services.map((service, index) => {
                     const IconComponent = service.icon;
@@ -165,25 +180,27 @@ const PremiumServices: React.FC = () => {
                         {/* Animated background */}
                         <div
                           className={`
-                          absolute inset-0 bg-gradient-to-r opacity-0 transition-opacity duration-300
-                          ${isActive ? "opacity-20" : "group-hover:opacity-10"}
-                          ${service.activeColor.replace(
-                            "bg-",
-                            "from-"
-                          )} to-transparent
-                        `}
+                            absolute inset-0 bg-gradient-to-r opacity-0 transition-opacity duration-300
+                            ${
+                              isActive ? "opacity-20" : "group-hover:opacity-10"
+                            }
+                            ${service.activeColor.replace(
+                              "bg-",
+                              "from-"
+                            )} to-transparent
+                          `}
                         ></div>
 
                         <div className="relative flex items-center space-x-4">
                           <div
                             className={`
-                            p-2 rounded-lg transition-all duration-300
-                            ${
-                              isActive
-                                ? "bg-white/20 text-white"
-                                : `${service.bgColor} ${service.color}`
-                            }
-                          `}
+                              p-2 rounded-lg transition-all duration-300
+                              ${
+                                isActive
+                                  ? "bg-white/20 text-white"
+                                  : `${service.bgColor} ${service.color}`
+                              }
+                            `}
                           >
                             <IconComponent className="h-6 w-6" />
                           </div>
@@ -197,9 +214,9 @@ const PremiumServices: React.FC = () => {
                             </h4>
                             <div
                               className={`
-                              w-0 h-0.5 bg-white/50 transition-all duration-300 mt-1
-                              ${isActive ? "w-full" : "group-hover:w-1/2"}
-                            `}
+                                w-0 h-0.5 bg-white/50 transition-all duration-300 mt-1
+                                ${isActive ? "w-full" : "group-hover:w-1/2"}
+                              `}
                             ></div>
                           </div>
                         </div>
@@ -222,23 +239,25 @@ const PremiumServices: React.FC = () => {
           <div className="lg:col-span-3 pt-3">
             <div
               className={`
-              transition-all duration-300 ease-out transform
-              ${
-                isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"
-              }
-            `}
+                transition-all duration-300 ease-out transform
+                ${
+                  isTransitioning
+                    ? "opacity-0 scale-95"
+                    : "opacity-100 scale-100"
+                }
+              `}
             >
               <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
                 {/* Header with gradient background */}
                 <div
                   className={`
-                  relative p-8 text-white overflow-hidden
-                  bg-gradient-to-br ${activeService.activeColor.replace(
-                    "bg-",
-                    "from-"
-                  )} 
-                  to-${activeService.color.split("-")[1]}-400
-                `}
+                    relative p-8 text-white overflow-hidden
+                    bg-gradient-to-br ${activeService.activeColor.replace(
+                      "bg-",
+                      "from-"
+                    )} 
+                    to-${activeService.color.split("-")[1]}-400
+                  `}
                 >
                   {/* Decorative elements */}
                   <div className="absolute top-0 right-0 w-32 h-32 opacity-10">
@@ -288,9 +307,9 @@ const PremiumServices: React.FC = () => {
                       >
                         <div
                           className={`
-                          flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5
-                          ${activeService.activeColor} group-hover:scale-110 transition-transform duration-300
-                        `}
+                            flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5
+                            ${activeService.activeColor} group-hover:scale-110 transition-transform duration-300
+                          `}
                         >
                           <svg
                             className="w-3 h-3 text-white"
@@ -315,11 +334,21 @@ const PremiumServices: React.FC = () => {
                   <div className="mt-8 pt-6 border-t border-gray-100">
                     <button
                       className={`
-                      w-full py-4 px-6 rounded-xl text-white font-semibold
-                      ${activeService.activeColor} hover:opacity-90
-                      transition-all duration-300 hover:transform hover:scale-105
-                      shadow-lg hover:shadow-xl
-                    `}
+                        w-full py-4 px-6 rounded-xl text-white font-semibold
+                        ${activeService.activeColor} hover:opacity-90
+                        transition-all duration-300 hover:transform hover:scale-105
+                        shadow-lg hover:shadow-xl
+                      `}
+                      onClick={() => {
+                        const path =
+                          serviceRouteMap[
+                            activeService.id as keyof typeof serviceRouteMap
+                          ];
+                        if (path) {
+                          navigate(path);
+                          window.scrollTo(0, 0); // Scroll to top after navigating
+                        }
+                      }}
                     >
                       Learn More About {activeService.title}
                     </button>

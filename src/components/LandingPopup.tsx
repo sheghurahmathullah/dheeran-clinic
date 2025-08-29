@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // <-- Import useNavigate
 
 const HealthCheckupPopup: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate(); // <-- Initialize navigation
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -16,8 +18,7 @@ const HealthCheckupPopup: React.FC = () => {
 
   const handleButtonClick = () => {
     setIsOpen(false);
-    // Replace link with your appointment booking / form link
-    window.open("https://your-booking-link.com", "_blank");
+    navigate("/book-appointment"); // <-- Navigate within the app
   };
 
   if (!isOpen) return null;

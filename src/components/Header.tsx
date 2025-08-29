@@ -37,6 +37,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
         setIsServicesDropdownOpen(false);
       }
     }
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -46,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
     setCurrentPage(page);
     setIsMenuOpen(false);
     setIsServicesDropdownOpen(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top on page change
   };
 
   // Services List
